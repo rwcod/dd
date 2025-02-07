@@ -8,9 +8,6 @@ img2text/
 │   ├── core.py          # Main business logic for image processing
 │   ├── config.py        # Configuration and environment settings
 │   └── utils.py         # Helper functions
-├── tests/
-│   ├── __init__.py
-│   └── test_core.py     # Unit tests
 ├── Dockerfile           # Container configuration
 ├── requirements.txt     # Python dependencies
 └── main.py             # Entry point
@@ -41,9 +38,8 @@ img2text/
 4. **Development Workflow**
    1. Set up project structure
    2. Implement core functionality
-   3. Add tests
-   4. Containerize
-   5. Test end-to-end
+   3. Containerize
+   4. Deploy and validate
 
 ## Key Components
 
@@ -61,11 +57,6 @@ img2text/
    - Environment-based settings
    - MongoDB-based model configuration
    - Runtime parameter support
-
-4. **Testing & Quality**
-   - Unit tests for core components
-   - Integration tests for MongoDB
-   - Mocked image processing for tests
 
 ## Implementation Details
 

@@ -22,9 +22,6 @@ This document details the recommended approach for the **Coder** role, focusing 
 
 3. **Entry Point**:
    - `main.py`: CLI interface and application initialization
-   
-4. **Testing**:
-   - `tests/`: Unit tests for all components
 
 ---
 
@@ -103,22 +100,7 @@ def format_error(error: Exception) -> str:
 
 ---
 
-## 5. Testing Strategy
-
-1. **Unit Tests**:
-   - Mock MongoDB interactions
-   - Mock model inference
-   - Test configuration validation
-   - Test error handling
-
-2. **Integration Tests**:
-   - Test with real MongoDB connection
-   - Validate end-to-end workflow
-   - Test callback functionality
-
----
-
-## 6. Performance Considerations
+## 5. Performance Considerations
 
 1. **GPU Utilization**:
    - Check GPU availability
@@ -132,7 +114,7 @@ def format_error(error: Exception) -> str:
 
 ---
 
-## 7. Logging Best Practices
+## 6. Logging Best Practices
 
 1. **Log Levels**:
    - ERROR: Processing failures
