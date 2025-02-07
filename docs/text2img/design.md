@@ -8,9 +8,6 @@ text2img/
 │   ├── core.py          # Main business logic
 │   ├── config.py        # Configuration and environment settings
 │   └── utils.py         # Helper functions
-├── tests/
-│   ├── __init__.py
-│   └── test_core.py     # Unit tests
 ├── Dockerfile           # Minimal container setup
 ├── requirements.txt     # Dependencies
 └── main.py             # Entry point
@@ -35,18 +32,14 @@ text2img/
    - Clean interface between components
 
 4. **Development Workflow**
-   1. Set up basic project structure
+   1. Set up project structure
    2. Implement core functionality
-   3. Add tests
-   4. Containerize
-   5. Test end-to-end
+   3. Containerize
+   4. Deploy and validate
 
 ## Next Steps
 
 1. Create project structure
 2. Set up core modules
 3. Implement basic functionality
-4. Add tests
-5. Create Dockerfile
-
-Would you like to proceed with implementing this structure?
+4. Create Dockerfile
