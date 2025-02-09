@@ -29,6 +29,10 @@ For more details, see the [img2text documentation](docs/img2text/).
 - At least 8GB of RAM available
 - (Optional) NVIDIA GPU with CUDA support
 
+#### Windows-Specific Requirements
+- Run all Docker and Docker Compose commands in an elevated (Administrator) PowerShell or Command Prompt
+- Docker Desktop must be running
+
 ### Setup
 1. Clone the repository:
    ```bash
@@ -37,16 +41,23 @@ For more details, see the [img2text documentation](docs/img2text/).
    ```
 
 2. Place test images in `data/images/` directory for img2text service
+   ```bash
+   # Generate a test image
+   python data/create_test_image.py
+   ```
 
-3. Start the services:
+3. Start the services (in elevated terminal):
    ```bash
    docker-compose up -d
    ```
 
 ### Testing text2img
-1. Add text prompts to MongoDB:
+1. Add text prompts to MongoDB (in elevated terminal):
    ```bash
+   # Connect to MongoDB container
    docker-compose exec mongodb mongosh
+
+   # In MongoDB shell:
    use text2img
    db.prompts.insertMany([
      { text: "A beautiful sunset over mountains", status: "pending" },
@@ -62,12 +73,15 @@ For more details, see the [img2text documentation](docs/img2text/).
      ```
 
 ### Testing img2text
-1. Add image references to MongoDB:
+1. Add image references to MongoDB (in elevated terminal):
    ```bash
+   # Connect to MongoDB container
    docker-compose exec mongodb mongosh
+
+   # In MongoDB shell:
    use img2text
    db.images.insertMany([
-     { path: "/app/images/image1.jpg", status: "pending" },
+     { path: "/app/images/test_image.jpg", status: "pending" },
      { path: "/app/images/image2.jpg", status: "pending" }
    ])
    ```
@@ -81,6 +95,11 @@ For more details, see the [img2text documentation](docs/img2text/).
 ```bash
 docker-compose down
 ```
+
+### Troubleshooting
+- **Windows Access Denied**: Make sure to run all docker commands in an elevated (Administrator) terminal
+- **Docker Connection Error**: Ensure Docker Desktop is running
+- **MongoDB Connection Error**: Wait a few seconds after starting services for MongoDB to initialize
 
 ## Repository Structure
 ```
