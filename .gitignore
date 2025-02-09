@@ -7,6 +7,7 @@ __pycache__/
 build/
 develop-eggs/
 dist/
+downloads/
 eggs/
 .eggs/
 lib/
@@ -21,9 +22,8 @@ wheels/
 
 # Virtual Environment
 venv/
-ENV/
 env/
-.env
+ENV/
 
 # IDE
 .idea/
@@ -31,10 +31,15 @@ env/
 *.swp
 *.swo
 
-# Project specific
-memory-bank/
-.pytest_cache/
+# Test data
+data/images/*
+data/output/*
+!data/images/.gitkeep
+!data/output/.gitkeep
 
-# OS
-.DS_Store
-Thumbs.db
+# Local development
+.env
+*.log
+
+# Google Cloud credentials
+credentials/
